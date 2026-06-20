@@ -13,7 +13,6 @@ int main() {
     game.window.setFramerateLimit(60);
 
     loadResources(game);
-
     loadRecords(game);
 
     game.state = Game::MENU;

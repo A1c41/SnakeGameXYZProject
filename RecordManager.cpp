@@ -4,6 +4,11 @@
 #include <sstream>
 #include <algorithm>
 
+static void sortRecords(Game& game) {
+    std::sort(game.records.begin(), game.records.end(),
+        [](const Record& a, const Record& b) { return a.score > b.score; });
+}
+
 void loadRecords(Game& game) {
     game.records.clear();
     std::ifstream file(RECORDS_FILE);
@@ -14,21 +19,18 @@ void loadRecords(Game& game) {
         std::stringstream ss(line);
         std::string name;
         int score;
-        if (std::getline(ss, name, ';') && (ss >> score)) {
+        if (std::getline(ss, name, ';') && (ss >> score))
             game.records.push_back({ name, score });
-        }
     }
     file.close();
-    std::sort(game.records.begin(), game.records.end(),
-        [](const Record& a, const Record& b) { return a.score > b.score; });
+    sortRecords(game);
 }
 
 void saveRecords(const Game& game) {
     std::ofstream file(RECORDS_FILE);
     if (!file.is_open()) return;
-    for (const auto& rec : game.records) {
+    for (const auto& rec : game.records)
         file << rec.name << ";" << rec.score << "\n";
-    }
     file.close();
 }
 
@@ -40,8 +42,7 @@ bool isHighScore(const Game& game, int score) {
 void updateRecords(Game& game) {
     if (!game.newRecord) return;
     game.records.push_back({ game.playerName, game.score });
-    std::sort(game.records.begin(), game.records.end(),
-        [](const Record& a, const Record& b) { return a.score > b.score; });
+    sortRecords(game);
     saveRecords(game);
     game.newRecord = false;
 }

@@ -1,8 +1,8 @@
 #pragma once
 #include "Structures.h"
 
-void drawGrid(sf::RenderWindow& window);
-void drawWalls(Game& game);
+void drawBackgroundAndWalls(Game& game);
+void drawRecordsList(Game& game, int maxCount, int startY);
 void renderGame(Game& game);
 void renderPause(Game& game);
 void renderGameOver(Game& game);

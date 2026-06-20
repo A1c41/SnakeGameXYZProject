@@ -2,7 +2,7 @@
 #include "Constants.h"
 #include <cassert>
 
-sf::Texture createFallbackTexture(sf::Color color, int size) {
+static sf::Texture createFallbackTexture(sf::Color color, int size = CELL_SIZE) {
     sf::Image img;
     img.create(size, size, color);
     sf::Texture tex;
@@ -10,35 +10,24 @@ sf::Texture createFallbackTexture(sf::Color color, int size) {
     return tex;
 }
 
+static bool loadTexture(sf::Texture& tex, const std::string& path, sf::Color fallbackColor) {
+    if (tex.loadFromFile(path)) return true;
+    tex = createFallbackTexture(fallbackColor);
+    return false;
+}
+
 void loadResources(Game& game) {
     bool fontLoaded = game.font.loadFromFile(RESOURCES + "fonts\\Roboto-Black.ttf");
-    if (!fontLoaded) {
+    if (!fontLoaded)
         fontLoaded = game.font.loadFromFile("C:/Windows/Fonts/arial.ttf");
-    }
     assert(fontLoaded);
 
-    bool headLoaded = game.texHead.loadFromFile(RESOURCES + "head.png");
-    assert(headLoaded);
-    if (!headLoaded) game.texHead = createFallbackTexture(sf::Color::Green, CELL_SIZE);
+    loadTexture(game.texHead, RESOURCES + "head.png", sf::Color::Green);
+    loadTexture(game.texBody, RESOURCES + "body.png", sf::Color(0, 180, 0));
+    loadTexture(game.texFood, RESOURCES + "Apple.png", sf::Color::Red);
+    loadTexture(game.texWall, RESOURCES + "wall.png", sf::Color(100, 100, 100));
 
-    bool bodyLoaded = game.texBody.loadFromFile(RESOURCES + "body.png");
-    assert(bodyLoaded);
-    if (!bodyLoaded) game.texBody = createFallbackTexture(sf::Color(0, 180, 0), CELL_SIZE);
-
-    bool foodLoaded = game.texFood.loadFromFile(RESOURCES + "Apple.png");
-    assert(foodLoaded);
-    if (!foodLoaded) game.texFood = createFallbackTexture(sf::Color::Red, CELL_SIZE);
-
-    bool wallLoaded = game.texWall.loadFromFile(RESOURCES + "wall.png");
-    assert(wallLoaded);
-    if (!wallLoaded) game.texWall = createFallbackTexture(sf::Color(100, 100, 100), CELL_SIZE);
-
-    bool bgLoaded = game.texBackground.loadFromFile(RESOURCES + "background.png");
-    assert(bgLoaded);
-    if (!bgLoaded) {
-        game.texBackground = createFallbackTexture(sf::Color(20, 20, 20), CELL_SIZE);
-    }
-    else {
+    if (loadTexture(game.texBackground, RESOURCES + "background.png", sf::Color(20, 20, 20))) {
         game.backgroundSprite.setTexture(game.texBackground);
         game.backgroundSprite.setPosition(0, 0);
         game.backgroundSprite.setScale(
@@ -46,30 +35,16 @@ void loadResources(Game& game) {
             static_cast<float>(WINDOW_HEIGHT) / game.texBackground.getSize().y
         );
     }
+    else {
+        game.backgroundSprite.setTexture(game.texBackground);
+    }
 
-    bool clickLoaded = game.bufferClick.loadFromFile(RESOURCES + "click.wav");
-    assert(clickLoaded);
-    if (clickLoaded) game.soundClick.setBuffer(game.bufferClick);
+    game.bufferClick.loadFromFile(RESOURCES + "click.wav") ? game.soundClick.setBuffer(game.bufferClick) : void();
+    game.bufferCrash.loadFromFile(RESOURCES + "Death.wav") ? game.soundCrash.setBuffer(game.bufferCrash) : void();
+    game.bufferStart.loadFromFile(RESOURCES + "start.wav") ? game.soundStart.setBuffer(game.bufferStart) : void();
+    game.bufferEat.loadFromFile(RESOURCES + "AppleEat.wav") ? game.soundEat.setBuffer(game.bufferEat) : void();
 
-    bool crashLoaded = game.bufferCrash.loadFromFile(RESOURCES + "Death.wav");
-    assert(crashLoaded);
-    if (crashLoaded) game.soundCrash.setBuffer(game.bufferCrash);
-
-    bool startLoaded = game.bufferStart.loadFromFile(RESOURCES + "start.wav");
-    assert(startLoaded);
-    if (startLoaded) game.soundStart.setBuffer(game.bufferStart);
-
-    bool endLoaded = game.bufferEnd.loadFromFile(RESOURCES + "Death.wav");
-    assert(endLoaded);
-    if (endLoaded) game.soundEnd.setBuffer(game.bufferEnd);
-
-    bool eatLoaded = game.bufferEat.loadFromFile(RESOURCES + "AppleEat.wav");
-    assert(eatLoaded);
-    if (eatLoaded) game.soundEat.setBuffer(game.bufferEat);
-
-    bool musicLoaded = game.music.openFromFile(RESOURCES + "music.wav");
-    assert(musicLoaded);
-    if (musicLoaded) {
+    if (game.music.openFromFile(RESOURCES + "music.wav")) {
         game.music.setLoop(true);
         game.music.setVolume(50);
     }

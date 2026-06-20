@@ -1,9 +1,2 @@
-﻿  GameController.cpp
-  GameLogic.cpp
-  GameMain.cpp
-  InputHandler.cpp
-  RecordManager.cpp
-  Renderer.cpp
-  ResourceManager.cpp
-  Создание кода...
+﻿  ResourceManager.cpp
   SnakeGame.vcxproj -> C:\Cpp\SnakeGame\x64\Debug\SnakeGame.exe

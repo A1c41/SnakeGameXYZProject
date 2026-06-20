@@ -1,5 +1,8 @@
 Aichi;150
+Player;100
+Player;40
 Aichi;10
 Aichi;6
+Player;6
 Player;6
 Aichi;2

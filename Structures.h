@@ -13,9 +13,9 @@ struct Record {
 
 struct Snake {
     std::deque<sf::Vector2i> body;
-    sf::Vector2i direction;
-    sf::Vector2i nextDirection;
-    bool alive;
+    sf::Vector2i direction = sf::Vector2i(1, 0);
+    sf::Vector2i nextDirection = sf::Vector2i(1, 0);
+    bool alive = true;
 };
 
 struct Food {
@@ -43,12 +43,10 @@ struct Game {
     sf::SoundBuffer bufferClick;
     sf::SoundBuffer bufferCrash;
     sf::SoundBuffer bufferStart;
-    sf::SoundBuffer bufferEnd;
     sf::SoundBuffer bufferEat;
     sf::Sound soundClick;
     sf::Sound soundCrash;
     sf::Sound soundStart;
-    sf::Sound soundEnd;
     sf::Sound soundEat;
     sf::Music music;
     bool soundEnabled = true;
@@ -81,9 +79,7 @@ struct Game {
     bool started = false;
     float startTimer = START_DELAY;
 
-    bool enteringName = false;
     std::string playerName = "Player";
-    int nameCursor = 0;
 
     std::vector<Record> records;
     bool newRecord = false;

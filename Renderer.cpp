@@ -3,24 +3,27 @@
 #include <sstream>
 #include <cmath>
 
-void drawGrid(sf::RenderWindow& window) {
-    for (int x = 0; x <= GRID_WIDTH; ++x) {
-        sf::Vertex line[] = {
-            sf::Vertex(sf::Vector2f(static_cast<float>(x * CELL_SIZE), 0.0f)),
-            sf::Vertex(sf::Vector2f(static_cast<float>(x * CELL_SIZE), static_cast<float>(WINDOW_HEIGHT)))
-        };
-        window.draw(line, 2, sf::Lines);
+static void drawText(sf::RenderWindow& window, const std::string& str, const sf::Font& font,
+    int x, int y, int size, const sf::Color& color = sf::Color::White,
+    bool centered = false) {
+    sf::Text text(str, font, size);
+    text.setFillColor(color);
+    if (centered) {
+        sf::FloatRect rect = text.getLocalBounds();
+        x -= static_cast<int>(rect.width / 2);
+        y -= static_cast<int>(rect.height / 2);
     }
-    for (int y = 0; y <= GRID_HEIGHT; ++y) {
-        sf::Vertex line[] = {
-            sf::Vertex(sf::Vector2f(0.0f, static_cast<float>(y * CELL_SIZE))),
-            sf::Vertex(sf::Vector2f(static_cast<float>(WINDOW_WIDTH), static_cast<float>(y * CELL_SIZE)))
-        };
-        window.draw(line, 2, sf::Lines);
-    }
+    text.setPosition(static_cast<float>(x), static_cast<float>(y));
+    window.draw(text);
 }
 
-void drawWalls(Game& game) {
+static void drawMenuItem(Game& game, const std::string& label, int y, bool selected, int size = 30) {
+    drawText(game.window, label, game.font, WINDOW_WIDTH / 2 - 70, y, size,
+        selected ? sf::Color::Yellow : sf::Color::White);
+}
+
+void drawBackgroundAndWalls(Game& game) {
+    game.window.draw(game.backgroundSprite);
     sf::Sprite wallSprite(game.texWall);
     for (int x = 0; x < GRID_WIDTH; ++x) {
         wallSprite.setPosition(static_cast<float>(x * CELL_SIZE), 0.0f);
@@ -38,19 +41,27 @@ void drawWalls(Game& game) {
     }
 }
 
+void drawRecordsList(Game& game, int maxCount, int startY) {
+    int yPos = startY;
+    int count = 0;
+    for (const auto& rec : game.records) {
+        if (count >= maxCount) break;
+        std::stringstream line;
+        line << count + 1 << ". " << rec.name << "  " << rec.score;
+        drawText(game.window, line.str(), game.font, WINDOW_WIDTH / 2 - 120, yPos, 20, sf::Color::White);
+        yPos += 25;
+        ++count;
+    }
+}
+
 void renderGame(Game& game) {
     game.window.clear(sf::Color::Black);
-    game.window.draw(game.backgroundSprite);
-    drawWalls(game);
+    drawBackgroundAndWalls(game);
 
     game.window.draw(game.food.sprite);
 
     for (size_t i = 0; i < game.snake.body.size(); ++i) {
-        sf::Sprite sprite;
-        if (i == 0)
-            sprite = sf::Sprite(game.texHead);
-        else
-            sprite = sf::Sprite(game.texBody);
+        sf::Sprite sprite(i == 0 ? game.texHead : game.texBody);
         sprite.setPosition(static_cast<float>(game.snake.body[i].x * CELL_SIZE),
             static_cast<float>(game.snake.body[i].y * CELL_SIZE));
         game.window.draw(sprite);
@@ -58,18 +69,12 @@ void renderGame(Game& game) {
 
     std::stringstream ss;
     ss << "Score: " << game.score;
-    sf::Text text(ss.str(), game.font, 18);
-    text.setFillColor(sf::Color::Red);
-    text.setPosition(10.0f, 10.0f);
-    game.window.draw(text);
+    drawText(game.window, ss.str(), game.font, 10, 10, 18, sf::Color::Red);
 
     if (!game.started && game.snake.alive) {
         int remaining = static_cast<int>(std::ceil(game.startTimer));
-        sf::Text countdown(std::to_string(remaining), game.font, 48);
-        countdown.setFillColor(sf::Color::Yellow);
-        countdown.setPosition(static_cast<float>(WINDOW_WIDTH / 2 - 20),
-            static_cast<float>(WINDOW_HEIGHT / 2 - 30));
-        game.window.draw(countdown);
+        drawText(game.window, std::to_string(remaining), game.font,
+            WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2 - 30, 48, sf::Color::Yellow, true);
     }
 
     game.window.display();
@@ -81,66 +86,31 @@ void renderPause(Game& game) {
     overlay.setFillColor(sf::Color(0, 0, 0, 150));
     game.window.draw(overlay);
 
-    sf::Text title("PAUSED", game.font, 40);
-    title.setFillColor(sf::Color::White);
-    title.setPosition(static_cast<float>(WINDOW_WIDTH / 2 - 80), 150.0f);
-    game.window.draw(title);
+    drawText(game.window, "PAUSED", game.font, WINDOW_WIDTH / 2, 150, 40, sf::Color::White, true);
 
     std::vector<std::string> items = { "Continue", "Exit to Menu" };
     for (int i = 0; i < 2; ++i) {
-        sf::Text item(items[i], game.font, 30);
-        item.setFillColor(i == game.pauseChoice ? sf::Color::Yellow : sf::Color::White);
-        item.setPosition(static_cast<float>(WINDOW_WIDTH / 2 - 70),
-            250.0f + static_cast<float>(i * 60));
-        game.window.draw(item);
+        drawMenuItem(game, items[i], 250 + i * 60, i == game.pauseChoice, 30);
     }
     game.window.display();
 }
 
 void renderGameOver(Game& game) {
     game.window.clear(sf::Color::Black);
-    game.window.draw(game.backgroundSprite);
-    drawWalls(game);
+    drawBackgroundAndWalls(game);
 
-    sf::Text gameOver("GAME OVER", game.font, 48);
-    gameOver.setFillColor(sf::Color::Red);
-    gameOver.setPosition(static_cast<float>(WINDOW_WIDTH / 2 - 130), 40.0f);
-    game.window.draw(gameOver);
+    drawText(game.window, "GAME OVER", game.font, WINDOW_WIDTH / 2, 40, 48, sf::Color::Red, true);
 
     std::stringstream ss;
     ss << "Score: " << game.score;
-    sf::Text scoreText(ss.str(), game.font, 30);
-    scoreText.setFillColor(sf::Color::White);
-    scoreText.setPosition(static_cast<float>(WINDOW_WIDTH / 2 - 60), 100.0f);
-    game.window.draw(scoreText);
+    drawText(game.window, ss.str(), game.font, WINDOW_WIDTH / 2, 100, 30, sf::Color::White, true);
 
-    sf::Text recordsTitle("Top 5 Records:", game.font, 24);
-    recordsTitle.setFillColor(sf::Color::Cyan);
-    recordsTitle.setPosition(static_cast<float>(WINDOW_WIDTH / 2 - 100), 140.0f);
-    game.window.draw(recordsTitle);
-
-    int yPos = 170;
-    int count = 0;
-    for (const auto& rec : game.records) {
-        if (count >= TOP_RECORDS_POPUP) break;
-        std::stringstream line;
-        line << count + 1 << ". " << rec.name << "  " << rec.score;
-        sf::Text recordLine(line.str(), game.font, 20);
-        recordLine.setFillColor(sf::Color::White);
-        recordLine.setPosition(static_cast<float>(WINDOW_WIDTH / 2 - 120),
-            static_cast<float>(yPos));
-        game.window.draw(recordLine);
-        yPos += 25;
-        count++;
-    }
+    drawText(game.window, "Top 5 Records:", game.font, WINDOW_WIDTH / 2, 140, 24, sf::Color::Cyan, true);
+    drawRecordsList(game, TOP_RECORDS_POPUP, 170);
 
     std::vector<std::string> items = { "Play Again", "Main Menu" };
     for (int i = 0; i < 2; ++i) {
-        sf::Text item(items[i], game.font, 26);
-        item.setFillColor(i == game.gameOverChoice ? sf::Color::Yellow : sf::Color::White);
-        item.setPosition(static_cast<float>(WINDOW_WIDTH / 2 - 80),
-            310.0f + static_cast<float>(i * 40));
-        game.window.draw(item);
+        drawMenuItem(game, items[i], 310 + i * 40, i == game.gameOverChoice, 26);
     }
 
     game.window.display();
@@ -148,139 +118,67 @@ void renderGameOver(Game& game) {
 
 void renderEnterName(Game& game) {
     game.window.clear(sf::Color::Black);
-    game.window.draw(game.backgroundSprite);
-    drawWalls(game);
+    drawBackgroundAndWalls(game);
 
     sf::RectangleShape overlay(sf::Vector2f(static_cast<float>(WINDOW_WIDTH),
         static_cast<float>(WINDOW_HEIGHT)));
     overlay.setFillColor(sf::Color(0, 0, 0, 180));
     game.window.draw(overlay);
 
-    sf::Text prompt("New Record! Enter your name:", game.font, 30);
-    prompt.setFillColor(sf::Color::Yellow);
-    prompt.setPosition(static_cast<float>(WINDOW_WIDTH / 2 - 180), 180.0f);
-    game.window.draw(prompt);
-
-    sf::Text nameText(game.playerName, game.font, 36);
-    nameText.setFillColor(sf::Color::White);
-    nameText.setPosition(static_cast<float>(WINDOW_WIDTH / 2 - 80), 260.0f);
-    game.window.draw(nameText);
-
-    sf::Text hint("Press Backspace to delete, Enter to confirm", game.font, 18);
-    hint.setFillColor(sf::Color(200, 200, 200));
-    hint.setPosition(static_cast<float>(WINDOW_WIDTH / 2 - 200), 350.0f);
-    game.window.draw(hint);
+    drawText(game.window, "New Record! Enter your name:", game.font,
+        WINDOW_WIDTH / 2, 180, 30, sf::Color::Yellow, true);
+    drawText(game.window, game.playerName, game.font, WINDOW_WIDTH / 2, 260, 36, sf::Color::White, true);
+    drawText(game.window, "Press Backspace to delete, Enter to confirm", game.font,
+        WINDOW_WIDTH / 2, 350, 18, sf::Color(200, 200, 200), true);
 
     game.window.display();
 }
 
 void drawMenu(Game& game) {
     game.window.clear(sf::Color(30, 30, 30));
-
-    sf::Text title("SNAKE GAME", game.font, 48);
-    title.setFillColor(sf::Color::Green);
-    title.setPosition(static_cast<float>(WINDOW_WIDTH / 2 - 120), 40.0f);
-    game.window.draw(title);
+    drawText(game.window, "SNAKE GAME", game.font, WINDOW_WIDTH / 2, 40, 48, sf::Color::Green, true);
 
     std::vector<std::string> items = { "Play", "Difficulty", "Records", "Settings", "Exit" };
-    for (int i = 0; i < 5; ++i) {
-        sf::Text item(items[i], game.font, 30);
-        item.setFillColor(i == game.menuSelection ? sf::Color::Yellow : sf::Color::White);
-        item.setPosition(static_cast<float>(WINDOW_WIDTH / 2 - 70),
-            120.0f + static_cast<float>(i * 50));
-        game.window.draw(item);
-    }
+    for (int i = 0; i < 5; ++i)
+        drawMenuItem(game, items[i], 120 + i * 50, i == game.menuSelection);
 
     game.window.display();
 }
 
 void drawDifficultySelect(Game& game) {
     game.window.clear(sf::Color(30, 30, 30));
-
-    sf::Text title("Select Difficulty", game.font, 36);
-    title.setFillColor(sf::Color::Cyan);
-    title.setPosition(static_cast<float>(WINDOW_WIDTH / 2 - 130), 40.0f);
-    game.window.draw(title);
+    drawText(game.window, "Select Difficulty", game.font, WINDOW_WIDTH / 2, 40, 36, sf::Color::Cyan, true);
 
     std::vector<std::string> levels = { "1 - Easy", "2 - Medium", "3 - Normal", "4 - Hard", "5 - Expert" };
-    for (int i = 0; i < 5; ++i) {
-        sf::Text item(levels[i], game.font, 28);
-        item.setFillColor(i == game.difficultySelection ? sf::Color::Yellow : sf::Color::White);
-        item.setPosition(static_cast<float>(WINDOW_WIDTH / 2 - 80),
-            100.0f + static_cast<float>(i * 45));
-        game.window.draw(item);
-    }
+    for (int i = 0; i < 5; ++i)
+        drawMenuItem(game, levels[i], 100 + i * 45, i == game.difficultySelection, 28);
 
-    sf::Text hint("Press Enter to select, B to return", game.font, 16);
-    hint.setFillColor(sf::Color(200, 200, 200));
-    hint.setPosition(static_cast<float>(WINDOW_WIDTH / 2 - 150),
-        static_cast<float>(WINDOW_HEIGHT - 30));
-    game.window.draw(hint);
-
+    drawText(game.window, "Press Enter to select, B to return", game.font,
+        WINDOW_WIDTH / 2, WINDOW_HEIGHT - 30, 16, sf::Color(200, 200, 200), true);
     game.window.display();
 }
 
 void drawRecordsTable(Game& game) {
     game.window.clear(sf::Color(30, 30, 30));
-
-    sf::Text title("Records (Top 10)", game.font, 36);
-    title.setFillColor(sf::Color::Cyan);
-    title.setPosition(static_cast<float>(WINDOW_WIDTH / 2 - 130), 40.0f);
-    game.window.draw(title);
-
-    int yPos = 90;
-    int count = 0;
-    for (const auto& rec : game.records) {
-        if (count >= TOP_RECORDS_MENU) break;
-        std::stringstream line;
-        line << count + 1 << ". " << rec.name << "  " << rec.score;
-        sf::Text recordLine(line.str(), game.font, 22);
-        recordLine.setFillColor(sf::Color::White);
-        recordLine.setPosition(static_cast<float>(WINDOW_WIDTH / 2 - 120),
-            static_cast<float>(yPos));
-        game.window.draw(recordLine);
-        yPos += 30;
-        count++;
-    }
-    if (count == 0) {
-        sf::Text empty("No records yet.", game.font, 22);
-        empty.setFillColor(sf::Color(150, 150, 150));
-        empty.setPosition(static_cast<float>(WINDOW_WIDTH / 2 - 80), 150.0f);
-        game.window.draw(empty);
-    }
-
-    sf::Text hint("Press B to return", game.font, 16);
-    hint.setFillColor(sf::Color(200, 200, 200));
-    hint.setPosition(static_cast<float>(WINDOW_WIDTH / 2 - 80),
-        static_cast<float>(WINDOW_HEIGHT - 30));
-    game.window.draw(hint);
-
+    drawText(game.window, "Records (Top 10)", game.font, WINDOW_WIDTH / 2, 40, 36, sf::Color::Cyan, true);
+    drawRecordsList(game, TOP_RECORDS_MENU, 90);
+    drawText(game.window, "Press B to return", game.font,
+        WINDOW_WIDTH / 2, WINDOW_HEIGHT - 30, 16, sf::Color(200, 200, 200), true);
     game.window.display();
 }
 
 void drawSettings(Game& game) {
     game.window.clear(sf::Color(30, 30, 30));
+    drawText(game.window, "Settings", game.font, WINDOW_WIDTH / 2, 40, 36, sf::Color::Cyan, true);
 
-    sf::Text title("Settings", game.font, 36);
-    title.setFillColor(sf::Color::Cyan);
-    title.setPosition(static_cast<float>(WINDOW_WIDTH / 2 - 70), 40.0f);
-    game.window.draw(title);
+    std::vector<std::string> items = {
+        "Sound: " + std::string(game.soundEnabled ? "ON" : "OFF"),
+        "Music: " + std::string(game.musicEnabled ? "ON" : "OFF")
+    };
+    for (int i = 0; i < 2; ++i)
+        drawMenuItem(game, items[i], 120 + i * 60, i == game.settingsSelection, 28);
 
-    std::vector<std::string> items = { "Sound: " + std::string(game.soundEnabled ? "ON" : "OFF"),
-                                      "Music: " + std::string(game.musicEnabled ? "ON" : "OFF") };
-    for (int i = 0; i < 2; ++i) {
-        sf::Text item(items[i], game.font, 28);
-        item.setFillColor(i == game.settingsSelection ? sf::Color::Yellow : sf::Color::White);
-        item.setPosition(static_cast<float>(WINDOW_WIDTH / 2 - 80),
-            120.0f + static_cast<float>(i * 60));
-        game.window.draw(item);
-    }
-
-    sf::Text hint("Use Up/Down to select, Left/Right to toggle, B to return", game.font, 16);
-    hint.setFillColor(sf::Color(200, 200, 200));
-    hint.setPosition(static_cast<float>(WINDOW_WIDTH / 2 - 200),
-        static_cast<float>(WINDOW_HEIGHT - 30));
-    game.window.draw(hint);
-
+    drawText(game.window, "Use Up/Down to select, Left/Right to toggle, B to return", game.font,
+        WINDOW_WIDTH / 2, WINDOW_HEIGHT - 30, 16, sf::Color(200, 200, 200), true);
     game.window.display();
 }
