@@ -10,15 +10,12 @@ sf::Texture createFallbackTexture(sf::Color color, int size) {
     return tex;
 }
 
-bool loadResources(Game& game) {
-    bool success = true;
-
+void loadResources(Game& game) {
     bool fontLoaded = game.font.loadFromFile(RESOURCES + "fonts\\Roboto-Black.ttf");
     if (!fontLoaded) {
         fontLoaded = game.font.loadFromFile("C:/Windows/Fonts/arial.ttf");
     }
     assert(fontLoaded);
-    if (!fontLoaded) success = false;
 
     bool headLoaded = game.texHead.loadFromFile(RESOURCES + "head.png");
     assert(headLoaded);
@@ -72,13 +69,8 @@ bool loadResources(Game& game) {
 
     bool musicLoaded = game.music.openFromFile(RESOURCES + "music.wav");
     assert(musicLoaded);
-    if (!musicLoaded) {
-        success = false;
-    }
-    else {
+    if (musicLoaded) {
         game.music.setLoop(true);
         game.music.setVolume(50);
     }
-
-    return success;
 }

@@ -12,8 +12,7 @@ int main() {
     game.window.create(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Snake Game");
     game.window.setFramerateLimit(60);
 
-    if (!loadResources(game)) {
-    }
+    loadResources(game);
 
     loadRecords(game);
 
