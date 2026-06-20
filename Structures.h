@@ -4,6 +4,7 @@
 #include <deque>
 #include <vector>
 #include <string>
+#include "Constants.h"
 
 struct Record {
     std::string name;
@@ -24,21 +25,19 @@ struct Food {
 
 struct Game {
     sf::RenderWindow window;
-    sf::Clock clock;
-    float moveTimer;
-    float moveInterval;
+    sf::Clock clock;          // перезапускаетс€ каждый кадр
+    float moveTimer = 0.0f;
+    float moveInterval = 0.5f;
 
     Snake snake;
     Food food;
-
-    int score;
+    int score = 0;
 
     sf::Texture texHead;
     sf::Texture texBody;
     sf::Texture texFood;
     sf::Texture texWall;
     sf::Texture texBackground;
-
     sf::Sprite backgroundSprite;
 
     sf::SoundBuffer bufferClick;
@@ -52,8 +51,8 @@ struct Game {
     sf::Sound soundEnd;
     sf::Sound soundEat;
     sf::Music music;
-    bool soundEnabled;
-    bool musicEnabled;
+    bool soundEnabled = true;
+    bool musicEnabled = true;
 
     enum State {
         MENU,
@@ -65,31 +64,27 @@ struct Game {
         GAMEOVER,
         ENTER_NAME
     };
-    State state;
+    State state = MENU;
 
-    int difficulty;
-    int scorePerApple;
-    float baseSpeed;
+    int difficulty = 1;
+    int scorePerApple = 2;
 
-    int menuSelection;
-    int settingsSelection;
-    int difficultySelection;
-    int recordsMenuSelection;
+    int menuSelection = 0;
+    int settingsSelection = 0;
+    int difficultySelection = 0;
+    int gameOverChoice = 0;
+    int pauseChoice = 0;
 
     sf::Font font;
 
-    bool paused;
-    bool started;
-    float startTimer;
-    float pauseTimer;
+    bool paused = false;
+    bool started = false;      // true Ц после обратного отсчЄта
+    float startTimer = START_DELAY;
 
-    bool enteringName;
-    std::string playerName;
-    int nameCursor;
+    bool enteringName = false;
+    std::string playerName = "Player";
+    int nameCursor = 0;
 
     std::vector<Record> records;
-    bool newRecord;
-
-    int gameOverChoice;
-    int pauseChoice;
+    bool newRecord = false;
 };

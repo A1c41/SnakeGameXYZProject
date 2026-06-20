@@ -128,12 +128,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Functions.cpp" />
+    <ClCompile Include="GameController.cpp" />
+    <ClCompile Include="GameLogic.cpp" />
     <ClCompile Include="GameMain.cpp" />
+    <ClCompile Include="InputHandler.cpp" />
+    <ClCompile Include="RecordManager.cpp" />
+    <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="ResourceManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Constants.h" />
-    <ClInclude Include="Functions.h" />
+    <ClInclude Include="GameController.h" />
+    <ClInclude Include="GameLogic.h" />
+    <ClInclude Include="InputHandler.h" />
+    <ClInclude Include="RecordManager.h" />
+    <ClInclude Include="Renderer.h" />
+    <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="Structures.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

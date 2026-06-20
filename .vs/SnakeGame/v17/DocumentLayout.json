@@ -3,24 +3,64 @@
   "WorkspaceRootPath": "C:\\Cpp\\SnakeGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5F7C91F4-AB78-4437-8257-6292E9DA4D93}|SnakeGame.vcxproj|C:\\Cpp\\SnakeGame\\Functions.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5F7C91F4-AB78-4437-8257-6292E9DA4D93}|SnakeGame.vcxproj|solutionrelative:Functions.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{5F7C91F4-AB78-4437-8257-6292E9DA4D93}|SnakeGame.vcxproj|C:\\Cpp\\SnakeGame\\Structures.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5F7C91F4-AB78-4437-8257-6292E9DA4D93}|SnakeGame.vcxproj|solutionrelative:Structures.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5F7C91F4-AB78-4437-8257-6292E9DA4D93}|SnakeGame.vcxproj|C:\\Cpp\\SnakeGame\\GameMain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{5F7C91F4-AB78-4437-8257-6292E9DA4D93}|SnakeGame.vcxproj|solutionrelative:GameMain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{5F7C91F4-AB78-4437-8257-6292E9DA4D93}|SnakeGame.vcxproj|C:\\Cpp\\SnakeGame\\GameController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5F7C91F4-AB78-4437-8257-6292E9DA4D93}|SnakeGame.vcxproj|solutionrelative:GameController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F7C91F4-AB78-4437-8257-6292E9DA4D93}|SnakeGame.vcxproj|C:\\Cpp\\SnakeGame\\GameController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5F7C91F4-AB78-4437-8257-6292E9DA4D93}|SnakeGame.vcxproj|solutionrelative:GameController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F7C91F4-AB78-4437-8257-6292E9DA4D93}|SnakeGame.vcxproj|C:\\Cpp\\SnakeGame\\InputHandler.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5F7C91F4-AB78-4437-8257-6292E9DA4D93}|SnakeGame.vcxproj|solutionrelative:InputHandler.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F7C91F4-AB78-4437-8257-6292E9DA4D93}|SnakeGame.vcxproj|C:\\Cpp\\SnakeGame\\InputHandler.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5F7C91F4-AB78-4437-8257-6292E9DA4D93}|SnakeGame.vcxproj|solutionrelative:InputHandler.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F7C91F4-AB78-4437-8257-6292E9DA4D93}|SnakeGame.vcxproj|C:\\Cpp\\SnakeGame\\Renderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5F7C91F4-AB78-4437-8257-6292E9DA4D93}|SnakeGame.vcxproj|solutionrelative:Renderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F7C91F4-AB78-4437-8257-6292E9DA4D93}|SnakeGame.vcxproj|C:\\Cpp\\SnakeGame\\Renderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5F7C91F4-AB78-4437-8257-6292E9DA4D93}|SnakeGame.vcxproj|solutionrelative:Renderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F7C91F4-AB78-4437-8257-6292E9DA4D93}|SnakeGame.vcxproj|C:\\Cpp\\SnakeGame\\GameLogic.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5F7C91F4-AB78-4437-8257-6292E9DA4D93}|SnakeGame.vcxproj|solutionrelative:GameLogic.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F7C91F4-AB78-4437-8257-6292E9DA4D93}|SnakeGame.vcxproj|C:\\Cpp\\SnakeGame\\GameLogic.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5F7C91F4-AB78-4437-8257-6292E9DA4D93}|SnakeGame.vcxproj|solutionrelative:GameLogic.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F7C91F4-AB78-4437-8257-6292E9DA4D93}|SnakeGame.vcxproj|C:\\Cpp\\SnakeGame\\RecordManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5F7C91F4-AB78-4437-8257-6292E9DA4D93}|SnakeGame.vcxproj|solutionrelative:RecordManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F7C91F4-AB78-4437-8257-6292E9DA4D93}|SnakeGame.vcxproj|C:\\Cpp\\SnakeGame\\RecordManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5F7C91F4-AB78-4437-8257-6292E9DA4D93}|SnakeGame.vcxproj|solutionrelative:RecordManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F7C91F4-AB78-4437-8257-6292E9DA4D93}|SnakeGame.vcxproj|C:\\Cpp\\SnakeGame\\ResourceManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5F7C91F4-AB78-4437-8257-6292E9DA4D93}|SnakeGame.vcxproj|solutionrelative:ResourceManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F7C91F4-AB78-4437-8257-6292E9DA4D93}|SnakeGame.vcxproj|C:\\Cpp\\SnakeGame\\ResourceManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5F7C91F4-AB78-4437-8257-6292E9DA4D93}|SnakeGame.vcxproj|solutionrelative:ResourceManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5F7C91F4-AB78-4437-8257-6292E9DA4D93}|SnakeGame.vcxproj|C:\\Cpp\\SnakeGame\\Constants.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{5F7C91F4-AB78-4437-8257-6292E9DA4D93}|SnakeGame.vcxproj|solutionrelative:Constants.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F7C91F4-AB78-4437-8257-6292E9DA4D93}|SnakeGame.vcxproj|C:\\Cpp\\SnakeGame\\Functions.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5F7C91F4-AB78-4437-8257-6292E9DA4D93}|SnakeGame.vcxproj|solutionrelative:Functions.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F7C91F4-AB78-4437-8257-6292E9DA4D93}|SnakeGame.vcxproj|C:\\Cpp\\SnakeGame\\Structures.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5F7C91F4-AB78-4437-8257-6292E9DA4D93}|SnakeGame.vcxproj|solutionrelative:Structures.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,57 +70,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 13,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Structures.h",
-              "DocumentMoniker": "C:\\Cpp\\SnakeGame\\Structures.h",
-              "RelativeDocumentMoniker": "Structures.h",
-              "ToolTip": "C:\\Cpp\\SnakeGame\\Structures.h",
-              "RelativeToolTip": "Structures.h",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAIwBgAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-17T10:45:28.4Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Functions.h",
-              "DocumentMoniker": "C:\\Cpp\\SnakeGame\\Functions.h",
-              "RelativeDocumentMoniker": "Functions.h",
-              "ToolTip": "C:\\Cpp\\SnakeGame\\Functions.h",
-              "RelativeToolTip": "Functions.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-17T10:44:58.231Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Functions.cpp",
-              "DocumentMoniker": "C:\\Cpp\\SnakeGame\\Functions.cpp",
-              "RelativeDocumentMoniker": "Functions.cpp",
-              "ToolTip": "C:\\Cpp\\SnakeGame\\Functions.cpp",
-              "RelativeToolTip": "Functions.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-06-17T10:44:43.797Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Constants.h",
-              "DocumentMoniker": "C:\\Cpp\\SnakeGame\\Constants.h",
-              "RelativeDocumentMoniker": "Constants.h",
-              "ToolTip": "C:\\Cpp\\SnakeGame\\Constants.h",
-              "RelativeToolTip": "Constants.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-17T10:44:30.992Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -89,9 +80,192 @@
               "RelativeDocumentMoniker": "GameMain.cpp",
               "ToolTip": "C:\\Cpp\\SnakeGame\\GameMain.cpp",
               "RelativeToolTip": "GameMain.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-06-17T10:40:00.705Z"
+              "WhenOpened": "2026-06-20T07:15:41.94Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GameController.cpp",
+              "DocumentMoniker": "C:\\Cpp\\SnakeGame\\GameController.cpp",
+              "RelativeDocumentMoniker": "GameController.cpp",
+              "ToolTip": "C:\\Cpp\\SnakeGame\\GameController.cpp",
+              "RelativeToolTip": "GameController.cpp",
+              "ViewState": "AgIAABcAAAAAAAAAAAAIwEIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-06-20T07:15:31.159Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GameController.h",
+              "DocumentMoniker": "C:\\Cpp\\SnakeGame\\GameController.h",
+              "RelativeDocumentMoniker": "GameController.h",
+              "ToolTip": "C:\\Cpp\\SnakeGame\\GameController.h",
+              "RelativeToolTip": "GameController.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-06-20T07:15:24.356Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "InputHandler.cpp",
+              "DocumentMoniker": "C:\\Cpp\\SnakeGame\\InputHandler.cpp",
+              "RelativeDocumentMoniker": "InputHandler.cpp",
+              "ToolTip": "C:\\Cpp\\SnakeGame\\InputHandler.cpp",
+              "RelativeToolTip": "InputHandler.cpp",
+              "ViewState": "AgIAAO8AAAAAAAAAAAAIwB4BAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-06-20T07:15:10.479Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "InputHandler.h",
+              "DocumentMoniker": "C:\\Cpp\\SnakeGame\\InputHandler.h",
+              "RelativeDocumentMoniker": "InputHandler.h",
+              "ToolTip": "C:\\Cpp\\SnakeGame\\InputHandler.h",
+              "RelativeToolTip": "InputHandler.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-06-20T07:15:05.684Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Renderer.cpp",
+              "DocumentMoniker": "C:\\Cpp\\SnakeGame\\Renderer.cpp",
+              "RelativeDocumentMoniker": "Renderer.cpp",
+              "ToolTip": "C:\\Cpp\\SnakeGame\\Renderer.cpp",
+              "RelativeToolTip": "Renderer.cpp",
+              "ViewState": "AgIAAPIAAAAAAAAAAAAIwB0BAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-06-20T07:14:54.085Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Renderer.h",
+              "DocumentMoniker": "C:\\Cpp\\SnakeGame\\Renderer.h",
+              "RelativeDocumentMoniker": "Renderer.h",
+              "ToolTip": "C:\\Cpp\\SnakeGame\\Renderer.h",
+              "RelativeToolTip": "Renderer.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-06-20T07:14:48.939Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GameLogic.cpp",
+              "DocumentMoniker": "C:\\Cpp\\SnakeGame\\GameLogic.cpp",
+              "RelativeDocumentMoniker": "GameLogic.cpp",
+              "ToolTip": "C:\\Cpp\\SnakeGame\\GameLogic.cpp",
+              "RelativeToolTip": "GameLogic.cpp",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAIwHQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-06-20T07:14:38.222Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "GameLogic.h",
+              "DocumentMoniker": "C:\\Cpp\\SnakeGame\\GameLogic.h",
+              "RelativeDocumentMoniker": "GameLogic.h",
+              "ToolTip": "C:\\Cpp\\SnakeGame\\GameLogic.h",
+              "RelativeToolTip": "GameLogic.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-06-20T07:14:32.716Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "RecordManager.cpp",
+              "DocumentMoniker": "C:\\Cpp\\SnakeGame\\RecordManager.cpp",
+              "RelativeDocumentMoniker": "RecordManager.cpp",
+              "ToolTip": "C:\\Cpp\\SnakeGame\\RecordManager.cpp",
+              "RelativeToolTip": "RecordManager.cpp",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAIwC8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-06-20T07:14:22.996Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "RecordManager.h",
+              "DocumentMoniker": "C:\\Cpp\\SnakeGame\\RecordManager.h",
+              "RelativeDocumentMoniker": "RecordManager.h",
+              "ToolTip": "C:\\Cpp\\SnakeGame\\RecordManager.h",
+              "RelativeToolTip": "RecordManager.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-06-20T07:14:16.451Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ResourceManager.cpp",
+              "DocumentMoniker": "C:\\Cpp\\SnakeGame\\ResourceManager.cpp",
+              "RelativeDocumentMoniker": "ResourceManager.cpp",
+              "ToolTip": "C:\\Cpp\\SnakeGame\\ResourceManager.cpp",
+              "RelativeToolTip": "ResourceManager.cpp",
+              "ViewState": "AgIAACoAAAAAAAAAAAAIwFcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-06-20T07:14:04.234Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ResourceManager.h",
+              "DocumentMoniker": "C:\\Cpp\\SnakeGame\\ResourceManager.h",
+              "RelativeDocumentMoniker": "ResourceManager.h",
+              "ToolTip": "C:\\Cpp\\SnakeGame\\ResourceManager.h",
+              "RelativeToolTip": "ResourceManager.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-06-20T07:13:57.63Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Structures.h",
+              "DocumentMoniker": "C:\\Cpp\\SnakeGame\\Structures.h",
+              "RelativeDocumentMoniker": "Structures.h",
+              "ToolTip": "C:\\Cpp\\SnakeGame\\Structures.h",
+              "RelativeToolTip": "Structures.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-06-20T07:13:45.896Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Constants.h",
+              "DocumentMoniker": "C:\\Cpp\\SnakeGame\\Constants.h",
+              "RelativeDocumentMoniker": "Constants.h",
+              "ToolTip": "C:\\Cpp\\SnakeGame\\Constants.h",
+              "RelativeToolTip": "Constants.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-06-20T07:13:38.661Z",
+              "EditorCaption": ""
             }
           ]
         }

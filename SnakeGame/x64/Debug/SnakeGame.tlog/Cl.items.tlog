@@ -1,2 +1,7 @@
-C:\Cpp\SnakeGame\Functions.cpp;C:\Cpp\SnakeGame\SnakeGame\x64\Debug\Functions.obj
+C:\Cpp\SnakeGame\GameController.cpp;C:\Cpp\SnakeGame\SnakeGame\x64\Debug\GameController.obj
+C:\Cpp\SnakeGame\GameLogic.cpp;C:\Cpp\SnakeGame\SnakeGame\x64\Debug\GameLogic.obj
 C:\Cpp\SnakeGame\GameMain.cpp;C:\Cpp\SnakeGame\SnakeGame\x64\Debug\GameMain.obj
+C:\Cpp\SnakeGame\InputHandler.cpp;C:\Cpp\SnakeGame\SnakeGame\x64\Debug\InputHandler.obj
+C:\Cpp\SnakeGame\RecordManager.cpp;C:\Cpp\SnakeGame\SnakeGame\x64\Debug\RecordManager.obj
+C:\Cpp\SnakeGame\Renderer.cpp;C:\Cpp\SnakeGame\SnakeGame\x64\Debug\Renderer.obj
+C:\Cpp\SnakeGame\ResourceManager.cpp;C:\Cpp\SnakeGame\SnakeGame\x64\Debug\ResourceManager.obj
