@@ -1,6 +1,6 @@
 #include "GameLogic.h"
 #include "Constants.h"
-#include "RecordManager.h"   // для isHighScore
+#include "RecordManager.h"
 #include <cstdlib>
 
 sf::Vector2i getRandomFreePosition(const Game& game) {

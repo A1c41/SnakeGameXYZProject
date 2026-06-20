@@ -25,7 +25,7 @@ struct Food {
 
 struct Game {
     sf::RenderWindow window;
-    sf::Clock clock;          // перезапускаетс€ каждый кадр
+    sf::Clock clock;
     float moveTimer = 0.0f;
     float moveInterval = 0.5f;
 
@@ -78,7 +78,7 @@ struct Game {
     sf::Font font;
 
     bool paused = false;
-    bool started = false;      // true Ц после обратного отсчЄта
+    bool started = false;
     float startTimer = START_DELAY;
 
     bool enteringName = false;

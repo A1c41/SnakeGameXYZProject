@@ -62,7 +62,6 @@ void handleMenuInput(Game& game, const sf::Event& event) {
         case 0:
             initGame(game);
             game.state = Game::PLAYING;
-            // Сброс таймера перед игрой
             game.clock.restart();
             game.moveTimer = 0.0f;
             game.started = false;
@@ -172,7 +171,6 @@ void handlePlayingInput(Game& game, const sf::Event& event) {
             if (game.musicEnabled) game.music.pause();
         }
         else {
-            // Выход из паузы – сброс таймера и задержка
             game.state = Game::PLAYING;
             game.clock.restart();
             game.moveTimer = 0.0f;
@@ -254,7 +252,6 @@ void handleGameOverInput(Game& game, const sf::Event& event) {
 }
 
 void handleEnterNameInput(Game& game, const sf::Event& event) {
-    // Обрабатываем только специальные клавиши
     if (event.key.code == sf::Keyboard::BackSpace) {
         if (!game.playerName.empty())
             game.playerName.pop_back();
@@ -273,7 +270,6 @@ void handleEnterNameInput(Game& game, const sf::Event& event) {
         game.state = Game::GAMEOVER;
         game.gameOverChoice = 0;
     }
-    // Символы обрабатываются в handleEnterNameTextInput (TextEntered)
 }
 
 void handleEnterNameTextInput(Game& game, const sf::Event& event) {

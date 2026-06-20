@@ -34,7 +34,6 @@ void saveRecords(const Game& game) {
 
 bool isHighScore(const Game& game, int score) {
     if (game.records.size() < TOP_RECORDS_POPUP) return true;
-    // Сравниваем с пятым по убыванию (индекс TOP_RECORDS_POPUP - 1)
     return score > game.records[TOP_RECORDS_POPUP - 1].score;
 }
 

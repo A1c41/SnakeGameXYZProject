@@ -8,14 +8,12 @@
 
 void runGame(Game& game) {
     while (game.window.isOpen()) {
-        // Перезапускаем таймер каждый кадр, чтобы dt было актуальным для всех состояний
         float dt = game.clock.restart().asSeconds();
 
         handleInput(game);
 
         switch (game.state) {
         case Game::PLAYING: {
-            // Обратный отсчёт перед началом движения
             if (!game.started) {
                 game.startTimer -= dt;
                 if (game.startTimer <= 0.0f) {
@@ -26,14 +24,12 @@ void runGame(Game& game) {
                 break;
             }
 
-            // Основная игровая логика
             if (!game.paused) {
                 game.moveTimer += dt;
                 while (game.moveTimer >= game.moveInterval) {
                     game.moveTimer -= game.moveInterval;
                     updateGame(game);
                     if (!game.snake.alive) {
-                        // После смерти состояние может смениться на GAMEOVER или ENTER_NAME
                         break;
                     }
                 }

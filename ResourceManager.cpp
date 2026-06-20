@@ -13,7 +13,6 @@ sf::Texture createFallbackTexture(sf::Color color, int size) {
 bool loadResources(Game& game) {
     bool success = true;
 
-    // Шрифт
     bool fontLoaded = game.font.loadFromFile(RESOURCES + "fonts\\Roboto-Black.ttf");
     if (!fontLoaded) {
         fontLoaded = game.font.loadFromFile("C:/Windows/Fonts/arial.ttf");
@@ -21,7 +20,6 @@ bool loadResources(Game& game) {
     assert(fontLoaded);
     if (!fontLoaded) success = false;
 
-    // Текстуры
     bool headLoaded = game.texHead.loadFromFile(RESOURCES + "head.png");
     assert(headLoaded);
     if (!headLoaded) game.texHead = createFallbackTexture(sf::Color::Green, CELL_SIZE);
@@ -52,7 +50,6 @@ bool loadResources(Game& game) {
         );
     }
 
-    // Звуки
     bool clickLoaded = game.bufferClick.loadFromFile(RESOURCES + "click.wav");
     assert(clickLoaded);
     if (clickLoaded) game.soundClick.setBuffer(game.bufferClick);
@@ -73,7 +70,6 @@ bool loadResources(Game& game) {
     assert(eatLoaded);
     if (eatLoaded) game.soundEat.setBuffer(game.bufferEat);
 
-    // Музыка
     bool musicLoaded = game.music.openFromFile(RESOURCES + "music.wav");
     assert(musicLoaded);
     if (!musicLoaded) {

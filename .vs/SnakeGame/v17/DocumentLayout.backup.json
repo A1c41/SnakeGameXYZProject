@@ -82,8 +82,7 @@
               "RelativeToolTip": "GameMain.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-06-20T07:15:41.94Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-20T07:15:41.94Z"
             },
             {
               "$type": "Document",
@@ -95,8 +94,7 @@
               "RelativeToolTip": "GameController.cpp",
               "ViewState": "AgIAABcAAAAAAAAAAAAIwEIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-06-20T07:15:31.159Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-20T07:15:31.159Z"
             },
             {
               "$type": "Document",
@@ -108,8 +106,7 @@
               "RelativeToolTip": "GameController.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-20T07:15:24.356Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-20T07:15:24.356Z"
             },
             {
               "$type": "Document",
@@ -121,8 +118,7 @@
               "RelativeToolTip": "InputHandler.cpp",
               "ViewState": "AgIAAO8AAAAAAAAAAAAIwB4BAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-06-20T07:15:10.479Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-20T07:15:10.479Z"
             },
             {
               "$type": "Document",
@@ -134,8 +130,7 @@
               "RelativeToolTip": "InputHandler.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-20T07:15:05.684Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-20T07:15:05.684Z"
             },
             {
               "$type": "Document",
@@ -147,8 +142,7 @@
               "RelativeToolTip": "Renderer.cpp",
               "ViewState": "AgIAAPIAAAAAAAAAAAAIwB0BAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-06-20T07:14:54.085Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-20T07:14:54.085Z"
             },
             {
               "$type": "Document",
@@ -160,8 +154,7 @@
               "RelativeToolTip": "Renderer.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-20T07:14:48.939Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-20T07:14:48.939Z"
             },
             {
               "$type": "Document",
@@ -173,8 +166,7 @@
               "RelativeToolTip": "GameLogic.cpp",
               "ViewState": "AgIAAEcAAAAAAAAAAAAIwHQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-06-20T07:14:38.222Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-20T07:14:38.222Z"
             },
             {
               "$type": "Document",
@@ -186,8 +178,7 @@
               "RelativeToolTip": "GameLogic.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-20T07:14:32.716Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-20T07:14:32.716Z"
             },
             {
               "$type": "Document",
@@ -199,8 +190,7 @@
               "RelativeToolTip": "RecordManager.cpp",
               "ViewState": "AgIAAAQAAAAAAAAAAAAIwC8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-06-20T07:14:22.996Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-20T07:14:22.996Z"
             },
             {
               "$type": "Document",
@@ -212,8 +202,7 @@
               "RelativeToolTip": "RecordManager.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-20T07:14:16.451Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-20T07:14:16.451Z"
             },
             {
               "$type": "Document",
@@ -225,8 +214,7 @@
               "RelativeToolTip": "ResourceManager.cpp",
               "ViewState": "AgIAACoAAAAAAAAAAAAIwFcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-06-20T07:14:04.234Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-20T07:14:04.234Z"
             },
             {
               "$type": "Document",
@@ -238,8 +226,7 @@
               "RelativeToolTip": "ResourceManager.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-20T07:13:57.63Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-20T07:13:57.63Z"
             },
             {
               "$type": "Document",
@@ -264,8 +251,7 @@
               "RelativeToolTip": "Constants.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-20T07:13:38.661Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-20T07:13:38.661Z"
             }
           ]
         }
